@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Послуги - NextWave</title>
+<style>
+/* === Загальні стилі === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* === Бургер-меню === */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    background-color: #2c3e50;
+    padding: 15px 20px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s;
+    z-index: 1100;
+}
+.menu-toggle:hover {
+    background-color: #34495e;
+}
+
+/* === Меню === */
+nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background: linear-gradient(180deg, #2c3e50, #3b4f66);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    padding-top: 50px;
+    transition: transform 0.4s ease;
+    z-index: 1000;
+}
+nav a {
+    text-decoration: none;
+    color: #ecf0f1;
+    padding: 15px 20px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+nav a:hover {
+    background-color: #34495e;
+    transform: scale(1.05);
+}
+
+/* === Основний контент === */
+main {
+    margin-left: 220px;
+    padding: 40px 50px;
+    max-width: 1100px;
+}
+
+/* === Хедер === */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 70px 40px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+header h1 {
+    margin: 0;
+    font-size: 2.6em;
+}
+
+/* === Секції послуг === */
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+.service-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* === Підвал === */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 50px;
+    font-size: 15px;
+}
+
+/* === Адаптивність для планшетів === */
+@media(max-width: 992px){
+    main {
+        margin-left: 0;
+        padding: 30px;
+    }
+    nav {
+        transform: translateX(-100%);
+        position: fixed;
+        width: 240px;
+        height: 100%;
+    }
+    nav.active {
+        transform: translateX(0);
+    }
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    header {
+        padding: 50px 25px;
+    }
+    header h1 {
+        font-size: 2.2em;
+    }
+}
+
+/* === Адаптивність для мобільних === */
+@media(max-width: 576px){
+    .menu-toggle {
+        font-size: 26px;
+        padding: 12px 18px;
+    }
+    nav a {
+        padding: 12px;
+        font-size: 15px;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    main {
+        padding: 20px;
+    }
+    .services-grid {
+        gap: 15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰ Меню</div>
+
+<nav>
+    <a href="index.html">Головна</a>
+    <a href="about.html">Про нас</a>
+    <a href="services.html">Послуги</a>
+    <a href="gallery.html">Галерея</a>
+    <a href="contacts.html">Контакти</a>
+</nav>
+
+<main>
+    <header>
+        <h1>Наші послуги</h1>
+    </header>
+
+    <section class="services-grid">
+        <div class="service-card">
+            <h3>Стратегія SMM</h3>
+            <p>Розробляємо індивідуальні стратегії для соцмереж з урахуванням особливостей бренду та цільової аудиторії.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Контент та креатив</h3>
+            <p>Створюємо унікальний контент: пости, графіку, відео, сторіс, орієнтовані на залучення аудиторії та впізнаваність бренду.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Реклама у соцмережах</h3>
+            <p>Налаштовуємо таргетовану рекламу для залучення нових клієнтів. Оптимізуємо бюджет та аудиторії для максимального ROI.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Аналітика та звіти</h3>
+            <p>Відстежуємо ефективність кампаній, надаємо детальні звіти та рекомендації для покращення результатів.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Брендінг у соцмережах</h3>
+            <p>Розробляємо візуальний стиль та tone of voice для соцмереж, створюючи впізнаваний образ бренду.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Копірайтинг та тексти</h3>
+            <p>Пишемо тексти, які продають і залучають, від постів до рекламних оголошень, враховуючи психологію аудиторії та SEO.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 NextWave. Всі права захищено.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.querySelector('nav').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

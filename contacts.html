@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контакти - NextWave</title>
+<style>
+/* === Загальні стилі === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* === Меню === */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    background-color: #2c3e50;
+    padding: 15px 20px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s;
+}
+.menu-toggle:hover {
+    background-color: #34495e;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background: linear-gradient(180deg, #2c3e50, #3b4f66);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    padding-top: 50px;
+    transition: transform 0.4s ease;
+    z-index: 1000;
+}
+nav a {
+    text-decoration: none;
+    color: #ecf0f1;
+    padding: 15px 20px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: background 0.3s, transform 0.2s;
+}
+nav a:hover {
+    background-color: #34495e;
+    transform: scale(1.05);
+}
+
+main {
+    margin-left: 220px;
+    padding: 40px 50px;
+    max-width: 1100px;
+}
+
+/* === Хедер === */
+.header-box {
+    background: linear-gradient(135deg, #2c3e50, #4a607a);
+    color: white;
+    padding: 70px 40px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.header-box h1 {
+    margin: 0;
+    font-size: 2.6em;
+    font-weight: 700;
+}
+
+/* === Форма === */
+form {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+button {
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 12px;
+    transition: background 0.3s;
+}
+button:hover {
+    background-color: #34495e;
+}
+
+/* === Контактна інформація === */
+h2, h3 {
+    color: #2c3e50;
+    margin-top: 40px;
+}
+iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* === Підвал === */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 50px;
+    font-size: 15px;
+}
+
+/* === Адаптивність для планшетів === */
+@media(max-width: 992px){
+    main {
+        margin-left: 0;
+        padding: 30px;
+    }
+    nav {
+        transform: translateX(-100%);
+        position: fixed;
+        width: 240px;
+        height: 100%;
+        z-index: 1000;
+    }
+    nav.active {
+        transform: translateX(0);
+    }
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1100;
+    }
+    .header-box {
+        padding: 50px 25px;
+    }
+    .header-box h1 {
+        font-size: 2.2em;
+    }
+}
+
+/* === Адаптивність для мобільних === */
+@media(max-width: 576px){
+    .menu-toggle {
+        font-size: 26px;
+        padding: 12px 18px;
+    }
+    nav a {
+        padding: 12px;
+        font-size: 15px;
+    }
+    section h2 {
+        font-size: 1.5em;
+    }
+    p, label {
+        font-size: 15px;
+    }
+    input, textarea, button {
+        font-size: 15px;
+    }
+    .header-box h1 {
+        font-size: 1.8em;
+    }
+    main {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰ Меню</div>
+
+<nav>
+    <a href="index.html">Головна</a>
+    <a href="about.html">Про нас</a>
+    <a href="services.html">Послуги</a>
+    <a href="gallery.html">Галерея</a>
+    <a href="contacts.html">Контакти</a>
+</nav>
+
+<main>
+    <div class="header-box">
+        <h1>Контакти</h1>
+    </div>
+
+    <section>
+        <h2>Зв'яжіться з нами</h2>
+        <form>
+            <label for="name">Ім’я:</label>
+            <input type="text" id="name" name="name" placeholder="Ваше ім’я">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="example@nextwave.com">
+
+            <label for="message">Повідомлення:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Ваше повідомлення"></textarea>
+
+            <button type="submit">Відправити</button>
+        </form>
+
+        <h3>Контактна інформація</h3>
+        <p>Email: contact@nextwave.com</p>
+        <p>Телефон: +380 96 456 78 90</p>
+        <p>Адреса: м. Київ, вул. Льва Толстого, 10, офіс 7</p>
+
+        <h3>Локація</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.784123456789!2d30.5234!3d50.4501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cfb1b1b1b1b1%3A0xabcdef1234567890!2z0JrQvtC70YzRgtCw0L3QvtCy0LjRjyDQmtC-0LvRjNC90LAg0JrQvtC70YzRgtCw0L3QvtCy0LjRjyA0MCDQkdC-0YHRgtC40L3QsCDQkdC40YfQtdGB0YLRjA!5e0!3m2!1suk!2sua!4v1695480000000!5m2!1suk!2sua" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 NextWave. Всі права захищено.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.querySelector('nav').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

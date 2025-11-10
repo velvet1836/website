@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMM Агентство NextWave</title>
+<style>
+/* === Загальні стилі === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* === Бургер-меню === */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    background-color: #2c3e50;
+    padding: 15px 20px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s;
+    z-index: 1100;
+}
+.menu-toggle:hover {
+    background-color: #34495e;
+}
+
+/* === Меню === */
+nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background: linear-gradient(180deg, #2c3e50, #3b4f66);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    padding-top: 50px;
+    transition: transform 0.4s ease;
+    z-index: 1000;
+}
+nav a {
+    text-decoration: none;
+    color: #ecf0f1;
+    padding: 15px 20px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+nav a:hover {
+    background-color: #34495e;
+    transform: scale(1.05);
+}
+
+/* === Основний контент === */
+main {
+    margin-left: 220px;
+    padding: 40px 50px;
+    max-width: 1100px;
+}
+
+/* === Герой-блок === */
+.hero {
+    background-color: #2c3e50;
+    color: white;
+    padding: 70px 40px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.hero h1 {
+    font-size: 2.6em;
+    margin: 0;
+}
+.hero p {
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+/* === Секції === */
+section {
+    margin-bottom: 60px;
+}
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.service-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 4px solid #ff6f61;
+    padding-left: 15px;
+    color: #555;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* === Підвал === */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 50px;
+    font-size: 15px;
+}
+
+/* === Адаптивність для планшетів === */
+@media(max-width: 992px){
+    main {
+        margin-left: 0;
+        padding: 30px;
+    }
+    nav {
+        transform: translateX(-100%);
+        position: fixed;
+        width: 240px;
+        height: 100%;
+    }
+    nav.active {
+        transform: translateX(0);
+    }
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .hero {
+        padding: 50px 25px;
+    }
+    .hero h1 {
+        font-size: 2.2em;
+    }
+}
+
+/* === Адаптивність для мобільних === */
+@media(max-width: 576px){
+    .menu-toggle {
+        font-size: 26px;
+        padding: 12px 18px;
+    }
+    nav a {
+        padding: 12px;
+        font-size: 15px;
+    }
+    .hero h1 {
+        font-size: 1.8em;
+    }
+    main {
+        padding: 20px;
+    }
+    .services-grid {
+        gap: 15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰ Меню</div>
+
+<nav>
+    <a href="index.html">Головна</a>
+    <a href="about.html">Про нас</a>
+    <a href="services.html">Послуги</a>
+    <a href="gallery.html">Галерея</a>
+    <a href="contacts.html">Контакти</a>
+</nav>
+
+<main>
+    <div class="hero">
+        <h1>NextWave</h1>
+        <p>Професійне SMM агентство</p>
+    </div>
+
+    <section>
+        <h2>Про нас</h2>
+        <p>NextWave — це професійне SMM агентство, яке спеціалізується на просуванні брендів у соціальних мережах. Ми створюємо індивідуальні стратегії, унікальний контент та таргетовану рекламу для досягнення максимального результату.</p>
+        <p>Наша команда складається з маркетологів, дизайнерів, копірайтерів та аналітиків, які працюють над тим, щоб кожна кампанія була ефективною та вимірюваною.</p>
+        <p>Ми працюємо з бізнесами будь-якого масштабу — від стартапів до великих корпорацій, забезпечуючи стабільне зростання бренду та залучення нових клієнтів.</p>
+    </section>
+
+    <section>
+        <h2>Наші унікальні послуги</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Мікро-інфлюенс маркетинг</h3>
+                <p>Робота з нішевими блогерами для залучення цільової аудиторії, підвищення впізнаваності та довіри до бренду.</p>
+            </div>
+            <div class="service-card">
+                <h3>Аудит соцмереж</h3>
+                <p>Повний аналіз акаунтів клієнта, виявлення слабких місць та рекомендації для підвищення ефективності контенту та реклами.</p>
+            </div>
+            <div class="service-card">
+                <h3>Створення інтерактивного контенту</h3>
+                <p>Гейміфікація, конкурси, опитування та відео, які підвищують залученість аудиторії та підвищують конверсії.</p>
+            </div>
+            <div class="service-card">
+                <h3>Аналітика та оптимізація кампаній</h3>
+                <p>Моніторинг KPI та ROI кожної кампанії з постійним коригуванням стратегії для максимального результату.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Наша місія</h2>
+        <blockquote>“Допомагати бізнесу зростати завдяки ефективному SMM та креативним digital-рішенням.”</blockquote>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 NextWave. Всі права захищено.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.querySelector('nav').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
